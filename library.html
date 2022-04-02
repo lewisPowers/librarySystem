@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <title>Library</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin: 50px;
+    }
+    h2 {
+      margin: 20px;
+    }
+    h3 {
+      margin:10px;
+    }
+
+  </style>
+  <script src="librarySystem.js"></script>
+</head>
+<body>
+  <h1>Hello Library</h1>
+
+  <!-- Example -->
+  <script>
+    myLibrary('dogs', function() {
+      return {
+        'My Dog': 'Bear',
+        'A Big Dog': 'Great Dane',
+        'A  Little Dog': 'Pug',
+        findDog: function(name) {
+          for (key in this) {
+            if (this[key] === name) return key;
+          }
+          return "Couldn't find doggo"
+        },
+        storeDog: function(key, value) {
+          this[key] = value;
+        }
+      }
+    })
+  </script>
+  <script>
+      let dogs = myLibrary('dogs');
+      let staging = [];
+      for (dog in dogs) {
+        if (typeof dogs[dog] === 'string') staging.push(`${dog}: ${dogs[dog]}`);
+      }
+      function displayDogs() {
+        let headingText = 'My List of Dogs:';
+        let headingElement = document.createElement('h2');
+        headingElement.textContent = headingText;
+        document.body.append(headingElement);
+        staging.forEach(item => {
+          let li = document.createElement('h3');
+          li.textContent = item;
+          document.body.append(li)
+        })
+      }
+      displayDogs();
+  </script>
+</body>
+</html>
