@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <link rel="stylesheet" type="text" href="styles.css">
   <title>Library</title>
   <style>
     * {
@@ -24,18 +24,26 @@
       margin: 50px;
     }
     h2 {
-      margin: 20px;
+      margin: 20px 10px;
     }
     h3 {
       margin:10px;
     }
+    .container {
+      display: flex;
 
+      gap: 20px;
+    }
+    .card {
+      padding: 20px;
+      border: 1px solid gray;
+    }
   </style>
   <script src="librarySystem.js"></script>
 </head>
 <body>
   <h1>Hello Library</h1>
-
+  <div class="container"></div>
   <!-- Example -->
   <script>
     myLibrary('dogs', function() {
@@ -43,36 +51,35 @@
         'My Dog': 'Bear',
         'A Big Dog': 'Great Dane',
         'A  Little Dog': 'Pug',
-        findDog: function(name) {
-          for (key in this) {
-            if (this[key] === name) return key;
-          }
-          return "Couldn't find doggo"
-        },
-        storeDog: function(key, value) {
-          this[key] = value;
-        }
+        // findDog: function(name) {
+        //   for (key in this) {
+        //     if (this[key] === name) return key;
+        //   }
+        //   return "Couldn't find doggo"
+        // },
+        // storeDog: function(key, value) {
+        //   this[key] = value;
+        // }
+      }
+    })
+    myLibrary('family', function() {
+      return {
+        'My Daughter': 'Tula',
+        'My Son': 'Jesse',
+        'My Mother': 'Marsha',
+        'My Sister': 'Joan'
+      }
+    })
+    myLibrary('groceries', function() {
+      return {
+        'Bread': 'Wheat',
+        'Cheese': 'Cheddar',
+        'Meat': 'Roast Beef',
+        'Condiment One': 'Mayo',
+        'Condiment Two': 'Mustard'
       }
     })
   </script>
-  <script>
-      let dogs = myLibrary('dogs');
-      let staging = [];
-      for (dog in dogs) {
-        if (typeof dogs[dog] === 'string') staging.push(`${dog}: ${dogs[dog]}`);
-      }
-      function displayDogs() {
-        let headingText = 'My List of Dogs:';
-        let headingElement = document.createElement('h2');
-        headingElement.textContent = headingText;
-        document.body.append(headingElement);
-        staging.forEach(item => {
-          let li = document.createElement('h3');
-          li.textContent = item;
-          document.body.append(li)
-        })
-      }
-      displayDogs();
-  </script>
+  <script src="view.js"></script>
 </body>
 </html>
