@@ -94,7 +94,13 @@
     //   console.log(e.target.value)
     // })
 
-    addButton.addEventListener('click', function(e) {
+    nameInputElement.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') updateDOM(e);
+    })
+
+    addButton.addEventListener('click', updateDOM);
+
+    function updateDOM(e) {
       let libraryName = libInputElement.value;
       let description = desInputElement.value;
       let name = nameInputElement.value;
@@ -110,13 +116,13 @@
           }
         })
       }
-      libInputElement.value = '';
+      // libInputElement.value = '';
       desInputElement.value = '';
       nameInputElement.value = '';
-      libInputElement.focus();
+      desInputElement.focus();
       view();
-    })
-  };
+    }
+  }
 
   myLibrary('dogs', function() {
     return {

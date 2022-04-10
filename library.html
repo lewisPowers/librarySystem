@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
-  <!-- <link type="text/css" rel="preload" href="styles.css" as="style"> -->
+  <!-- <link rel="stylesheet" href="styles.css" as="style" type="text/css"> -->
   <style type='text/css'>
     * {
       margin: 0;
@@ -29,10 +29,18 @@
     h3 {
       margin:10px;
     }
+    button {
+      padding: 2px;
+      margin: 4px;
+    }
     .container {
+      margin-top: 15px;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+    }
+    .input {
+      padding: 4px;
     }
     .card {
       padding: 20px;
@@ -45,16 +53,16 @@
   <h1>Hello Library</h1>
   <div class="inputs">
     <div class="input">
-      <label for="library">New Library: </label>
-      <input id="library" type="text" placeholder="Enter New Library">
+      <label for="library">Library: </label>
+      <input id="library" type="text" placeholder="New or Existing Library">
     </div>
     <div class="input">
       <label for="description">Description: </label>
-      <input id="description" name="description" type="texta" placeholder="Enter Description">
+      <input id="description" name="description" type="texta" placeholder="(key)">
     </div>
     <div class="input">
       <label for="name">Name: </label>
-      <input id="name" name="name" type="text" placeholder="Enter Name">
+      <input id="name" name="name" type="text" placeholder="(value)">
     </div>
     <!-- <button id="submit" type="submit"> -->
     <button id="submit" type="button">Submit</button>
