@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text" href="styles.css">
   <title>Library</title>
-  <style>
+  <!-- <link type="text/css" rel="preload" href="styles.css" as="style"> -->
+  <style type='text/css'>
     * {
       margin: 0;
       padding: 0;
@@ -43,6 +43,12 @@
 </head>
 <body>
   <h1>Hello Library</h1>
+  <div class="inputs">
+    <label for="library"></label>
+    <input id="library" type="text" placeholder="Enter New Library">
+    <label for="data"></label>
+    <input id="data" type="texta" placeholder="Enter Data">
+  </div>
   <div class="container"></div>
   <!-- Example -->
   <script>
@@ -50,7 +56,7 @@
       return {
         'My Dog': 'Bear',
         'A Big Dog': 'Great Dane',
-        'A  Little Dog': 'Pug',
+        'A  Little Dog': 'Pug'
         // findDog: function(name) {
         //   for (key in this) {
         //     if (this[key] === name) return key;
