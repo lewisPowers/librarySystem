@@ -31,7 +31,7 @@
     }
     .container {
       display: flex;
-
+      flex-wrap: wrap;
       gap: 20px;
     }
     .card {
@@ -39,44 +39,56 @@
       border: 1px solid gray;
     }
   </style>
-  <script src="librarySystem.js"></script>
+  <!-- <script type="module" src="librarySystem.js" defer></script> -->
 </head>
 <body>
   <h1>Hello Library</h1>
   <div class="inputs">
-    <label for="library"></label>
-    <input id="library" type="text" placeholder="Enter New Library">
-    <label for="name"></label>
-    <input id="name" type="texta" placeholder="Enter Data">
+    <div class="input">
+      <label for="library">New Library: </label>
+      <input id="library" type="text" placeholder="Enter New Library">
+    </div>
+    <div class="input">
+      <label for="description">Description: </label>
+      <input id="description" name="description" type="texta" placeholder="Enter Description">
+    </div>
+    <div class="input">
+      <label for="name">Name: </label>
+      <input id="name" name="name" type="text" placeholder="Enter Name">
+    </div>
+    <!-- <button id="submit" type="submit"> -->
+    <button id="submit" type="button">Submit</button>
   </div>
   <div class="container"></div>
   <!-- Example -->
   <script>
-    myLibrary('dogs', function() {
-      return {
-        'My Dog': 'Bear',
-        'A Big Dog': 'Great Dane',
-        'A  Little Dog': 'Pug'
-      }
-    })
-    myLibrary('family', function() {
-      return {
-        'My Daughter': 'Tula',
-        'My Son': 'Jesse',
-        'My Mother': 'Marsha',
-        'My Sister': 'Joan'
-      }
-    })
-    myLibrary('groceries', function() {
-      return {
-        'Bread': 'Wheat',
-        'Cheese': 'Cheddar',
-        'Meat': 'Roast Beef',
-        'Condiment One': 'Mayo',
-        'Condiment Two': 'Mustard'
-      }
-    })
+    // myLibrary('dogs', function() {
+    //   return {
+    //     'My Dog': 'Bear',
+    //     'A Big Dog': 'Great Dane',
+    //     'A  Little Dog': 'Pug'
+    //   }
+    // })
+    // myLibrary('family', function() {
+    //   return {
+    //     'My Daughter': 'Tula',
+    //     'My Son': 'Jesse',
+    //     'My Mother': 'Marsha',
+    //     'My Sister': 'Joan'
+    //   }
+    // })
+    // myLibrary('groceries', function() {
+    //   return {
+    //     'Bread': 'Wheat',
+    //     'Cheese': 'Cheddar',
+    //     'Meat': 'Roast Beef',
+    //     'Condiment One': 'Mayo',
+    //     'Condiment Two': 'Mustard'
+    //   }
+    // })
   </script>
-  <script src="view.js"></script>
+  <!-- <script type="module" src="view.js"></script> -->
+  <!-- <script type="module" src="controls.js"></script> -->
+  <script src="librarySystem.js"></script>
 </body>
 </html>
